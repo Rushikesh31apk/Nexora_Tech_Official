@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora Tech - Empowering Innovation with Integrity</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background: #000000;
+        }
+
+        .navbar {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 30px rgba(0, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #00f5ff, #00d4ff, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: #00f5ff !important;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+            padding: 8px 15px !important;
+            border-radius: 30px;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .navbar-nav .nav-link:hover::before,
+        .navbar-nav .nav-link.active::before {
+            opacity: 1;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 25px rgba(0, 245, 255, 0.5);
+        }
+
+        .hero-section {
+            background: #000000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 255, 127, 0.1) 0%, transparent 50%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+            box-shadow: 0 0 20px currentColor;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-1000px) translateX(200px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .floating-shape {
+            position: absolute;
+            background: rgba(0, 245, 255, 0.1);
+            animation: float 12s ease-in-out infinite;
+            z-index: 1;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            box-shadow:
+                inset 0 0 40px rgba(0, 245, 255, 0.3),
+                0 0 60px rgba(0, 245, 255, 0.2);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            background: linear-gradient(45deg, rgba(0, 245, 255, 0.2), rgba(255, 0, 255, 0.2));
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 2s;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background: linear-gradient(45deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 127, 0.2));
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            left: 20%;
+            animation-delay: 4s;
+            border-radius: 70% 30% 50% 50% / 30% 70% 30% 70%;
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.2), rgba(255, 0, 255, 0.2));
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: translateY(-40px) rotate(5deg) scale(1.05);
+            }
+        }
+
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: #000;
+            background: linear-gradient(45deg, #00f5ff, #ff00ff);
+            box-shadow: 0 0 40px rgba(0, 245, 255, 0.6), 0 0 60px rgba(255, 0, 255, 0.4);
+            animation: neonPulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes neonPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 40px rgba(0, 245, 255, 0.6), 0 0 60px rgba(255, 0, 255, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 60px rgba(0, 245, 255, 0.8), 0 0 80px rgba(255, 0, 255, 0.6);
+            }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            animation: none;
+            box-shadow: 0 0 60px rgba(0, 245, 255, 0.8), 0 0 100px rgba(255, 0, 255, 0.6);
+            color: #000;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            text-shadow: 0 0 40px rgba(0, 245, 255, 0.3);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
+        }
+
+        .feature-card {
+            background: rgba(10, 10, 10, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow:
+                0 0 30px rgba(0, 245, 255, 0.2),
+                inset 0 0 30px rgba(0, 245, 255, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow:
+                0 0 50px rgba(0, 245, 255, 0.4),
+                0 0 80px rgba(255, 0, 255, 0.3),
+                inset 0 0 40px rgba(0, 245, 255, 0.1);
+            border-color: rgba(0, 245, 255, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.6));
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(5deg);
+            filter: drop-shadow(0 0 30px rgba(255, 0, 255, 0.8));
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #00f5ff;
+        }
+
+        .feature-text {
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        .service-card {
+            background: rgba(10, 10, 10, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow:
+                0 0 30px rgba(0, 245, 255, 0.2),
+                inset 0 0 30px rgba(0, 245, 255, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow:
+                0 0 50px rgba(0, 245, 255, 0.4),
+                0 0 80px rgba(255, 0, 255, 0.3);
+            border-color: rgba(255, 0, 255, 0.5);
+        }
+
+        .project-card {
+            background: rgba(10, 10, 10, 0.9);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow:
+                0 0 30px rgba(0, 245, 255, 0.2),
+                inset 0 0 20px rgba(0, 245, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            cursor: pointer;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow:
+                0 0 60px rgba(0, 245, 255, 0.5),
+                0 0 100px rgba(255, 0, 255, 0.4);
+            border-color: rgba(255, 0, 255, 0.5);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #00f5ff 0%, #ff00ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(0, 255, 127, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(0, 212, 255, 0.3) 0%, transparent 50%);
+            animation: imageGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes imageGlow {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            background: rgba(5, 5, 5, 0.9);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #00f5ff;
+        }
+
+        .founder-section {
+            background: #000000;
+            position: relative;
+        }
+
+        .founder-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .founder-card {
+            background: rgba(10, 10, 10, 0.9);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow:
+                0 0 40px rgba(0, 245, 255, 0.3),
+                inset 0 0 40px rgba(0, 245, 255, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .founder-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 0 60px rgba(0, 245, 255, 0.5),
+                0 0 100px rgba(255, 0, 255, 0.3);
+            border-color: rgba(255, 0, 255, 0.5);
+        }
+
+        .founder-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 3px solid #00f5ff;
+            box-shadow:
+                0 0 40px rgba(0, 245, 255, 0.6),
+                0 0 60px rgba(255, 0, 255, 0.4);
+        }
+
+        .lecture-section {
+            background: #000000;
+        }
+
+        .lecture-card {
+            background: rgba(10, 10, 10, 0.95);
+            color: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow:
+                0 0 50px rgba(0, 245, 255, 0.4),
+                inset 0 0 50px rgba(0, 245, 255, 0.1);
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lecture-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+            z-index: 0;
+        }
+
+        .lecture-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .lecture-btn {
+            background: linear-gradient(45deg, #00f5ff, #ff00ff);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 40px rgba(0, 245, 255, 0.6);
+        }
+
+        .lecture-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 60px rgba(0, 245, 255, 0.8), 0 0 80px rgba(255, 0, 255, 0.6);
+            color: #000;
+        }
+
+        .careers-button {
+            background: linear-gradient(45deg, #00ff7f, #00f5ff);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: #000;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 40px rgba(0, 255, 127, 0.6);
+        }
+
+        .careers-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 60px rgba(0, 255, 127, 0.8), 0 0 80px rgba(0, 245, 255, 0.6);
+            color: #000;
+        }
+
+        .contact-form {
+            background: rgba(10, 10, 10, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow:
+                0 0 40px rgba(0, 245, 255, 0.3),
+                inset 0 0 30px rgba(0, 245, 255, 0.05);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+        }
+
+        .contact-info {
+            background: rgba(10, 10, 10, 0.95);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow:
+                0 0 40px rgba(255, 0, 255, 0.3),
+                inset 0 0 40px rgba(255, 0, 255, 0.1);
+            border: 2px solid rgba(255, 0, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+            z-index: 0;
+        }
+
+        .contact-info>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-control {
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 10px;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: #e0e0e0;
+        }
+
+        .form-control:focus {
+            border-color: #00f5ff;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        .form-control::placeholder {
+            color: #808080;
+        }
+
+
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Vertical center */
+            align-items: center;
+            /* Horizontal center */
+            text-align: center;
+            padding: 2.5rem;
+        }
+
+        /* Align icon + text nicely */
+        .contact-info>div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Spacing for icons */
+        .contact-info i {
+            font-size: 1.2rem;
+            color: #fefcfc;
+        }
+
+        /* Social links container */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .social-links a {
+            color: #00f5ff;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
+        }
+
+        .social-links a:hover {
+            color: #ff00ff;
+            transform: translateY(-5px) rotate(5deg);
+            text-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+        }
+
+
+
+
+        .footer {
+            background: #000000;
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+            border-top: 2px solid rgba(0, 245, 255, 0.2);
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 0 40px rgba(0, 245, 255, 0.6);
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 0 60px rgba(0, 245, 255, 0.8), 0 0 80px rgba(255, 0, 255, 0.6);
+        }
+
+        .bg-light-blue {
+            background: #000000;
+            position: relative;
+        }
+
+        .bg-light-blue::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(0, 245, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .navbar-nav .nav-link {
+                margin: 5px 0;
+            }
+
+            .founder-img {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+
+            .navbar-brand img {
+                height: 32px;
+            }
+
+            .navbar-nav {
+                text-align: center;
+                padding-top: 10px;
+            }
+
+            .navbar-nav .nav-link {
+                margin: 6px 0;
+                padding: 10px 15px !important;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .lecture-btn {
+                width: 100%;
+                max-width: 320px;
+                padding: 12px 18px;
+                font-size: 0.95rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                border-radius: 40px;
+                text-align: center;
+                white-space: normal;
+            }
+
+            .lecture-btn i {
+                font-size: 1rem;
+            }
+        }
+        .navbar-toggler {
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            padding: 6px 10px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .navbar-toggler {
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.6);
+        }
+        @media (max-width: 576px) {
+            .hero-section p.fs-5 {
+                font-size: 0.9rem !important;
+                line-height: 1.6;
+                margin-bottom: 1.2rem;
+                padding: 0 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home"> <img src="nexora.png" alt="Nexora Tech Logo">Nexora Tech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lecture">Career Guidance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#careers">Careers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="hero-section">
+        <div class="particles" id="particles"></div>
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-3 fw-bold mb-4">Nexora Tech</h1>
+                    <p class="fs-2 mb-4">Empowering the Next Era of Digital Innovation</p>
+                    <p class="fs-5 mb-5">We deliver robust, future-proof technology solutions built on a foundation of
+                        trust, quality, and cutting-edge expertise. From concept to deployment, our team combines deep
+                        industry knowledge with agile methodologies to ensure every project not only meets—but
+                        exceeds—your business goals.</p>
+                    <a href="#about" class="btn cta-button btn-lg px-5 py-3">
+                        <i class="fas fa-rocket me-2"></i>Discover More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding bg-light-blue">
+        <div class="container">
+            <h2 class="section-title">Why Choose Nexora Tech?</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                        <h3 class="feature-title">Trusted Partner</h3>
+                        <p class="feature-text">We prioritize transparency, data security, and clear communication at
+                            every stage, so you can rely on us to protect your interests and deliver on our promises.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3 class="feature-title">Innovative Mindset</h3>
+                        <p class="feature-text">By constantly exploring emerging technologies—AI, IoT, blockchain, and
+                            beyond—we craft solutions that keep you ahead of the curve.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                        <h3 class="feature-title">Next-Gen Focus</h3>
+                        <p class="feature-text">Our designs and architectures are built for scalability, performance,
+                            and adaptability, ensuring they remain relevant as your needs evolve.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="feature-card">
+                        <h3 class="feature-title text-center mb-4">Company Overview</h3>
+                        <p class="feature-text">At Nexora Tech, we don't just build software—we build long‑term
+                            partnerships rooted in innovation, integrity, and a shared vision of tomorrow's
+                            possibilities. We specialize in software development, ERP systems, web and app solutions,
+                            and IT education. Our services include IT consulting, custom web and application
+                            development, and hands-on training. We combine innovation, performance, and scalability to
+                            deliver future-ready technology that empowers businesses to grow, streamline operations, and
+                            stay competitive in the digital era.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Specializations</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="feature-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="feature-title">Software Development</h3>
+                        <p class="feature-text">Custom desktop, mobile, and cloud-native applications tailored to your
+                            unique workflows.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="feature-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="feature-title">ERP Systems</h3>
+                        <p class="feature-text">End-to-end enterprise resource planning—design, implementation,
+                            integration, and support.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="feature-title">Web & App Solutions</h3>
+                        <p class="feature-text">Responsive websites, progressive web apps, and native mobile experiences
+                            that engage users.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="feature-title">IT Education & Training</h3>
+                        <p class="feature-text">Hands-on workshops, mock interviews, and mentorship programs to upskill
+                            teams.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding bg-light-blue">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="project-card"
+                        onclick="window.open('http://localhost/tailor-management/login.php', '_blank')">
+                        <div class="project-image"><i class="fas fa-cut"></i></div>
+                        <div class="project-content">
+                            <h3 class="project-title">New Posh Tailor Management</h3>
+                            <p class="feature-text">Comprehensive tailor shop management system with customer tracking,
+                                measurements, orders, and billing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="feature-text">Full-stack solution with modern UI/UX, payment integration, and
+                                inventory management.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image"><i class="fas fa-hospital"></i></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Healthcare Management</h3>
+                            <p class="feature-text">Comprehensive ERP for hospitals with patient management, billing,
+                                and scheduling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="project-card">
+                        <div class="project-image"><i class="fas fa-chart-line"></i></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Business Analytics</h3>
+                            <p class="feature-text">Real-time data visualization platform for business intelligence and
+                                reporting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lecture" class="section-padding lecture-section">
+        <div class="container">
+            <h2 class="section-title">IT LaunchPad - Industry Orientation Program for Students</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="lecture-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                <img src="linkedinp.jpg" alt="Rushikesh Narawade" class="founder-img border-white">
+                                <h4 class="mt-3 text-white">Rushikesh Narawade</h4>
+                                <p class="text-white-50 mb-1">Founder & CEO – Nexora Tech</p>
+                                <p class="text-muted mb-3">Industry Mentor | IT Professional</p>
+                                <a href="https://www.linkedin.com/in/rushikesh-narawade-65a095236/" target="_blank"
+                                    class="btn btn-primary">
+                                    <i class="fab fa-linkedin me-2"></i>Connect on LinkedIn
+                                </a>
+
+                            </div>
+                            <div class="col-md-8">
+                                <h3 class="mb-4">One-Day Intensive Workshop for Students</h3>
+                                <p class="mb-3">
+                                    <strong>IT LaunchPad</strong> is a structured, one-day industry orientation
+                                    program designed for college students who aspire to build a successful
+                                    career in the IT sector. The session focuses on bridging the gap between
+                                    academic knowledge and real-world industry expectations.
+                                </p>
+                                <h5 class="mb-3">What You'll Learn:</h5>
+                                <ul class="mb-4">
+                                    <li>✓ Understanding the IT industry structure and fresher expectations</li>
+                                    <li>✓ How students can enter the IT industry step-by-step</li>
+                                    <li>✓ Selecting the right programming language or technology path</li>
+                                    <li>✓ Building a strong LinkedIn profile and professional network</li>
+                                    <li>✓ Effective job search strategies and application methods</li>
+                                    <li>✓ Resume structuring techniques for students and freshers</li>
+                                    <li>✓ Interview preparation strategies and common interview patterns</li>
+                                    <li>✓ Awareness of AI, ML, and emerging technology trends</li>
+                                    <li>✓ Practical guidance through mock interview discussions</li>
+                                </ul>
+
+                                <div class="mt-4">
+                                    <h5 class="mb-3">Core Expertise:</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-primary">Websites Development</span>
+                                        <span class="badge bg-primary">App Development</span>
+                                        <span class="badge bg-primary">Interviews Preparation</span>
+                                        <span class="badge bg-primary">Tech Trainer</span>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <a href="https://wa.me/918805423326?text=Hi%2C%20I%20am%20interested%20in%20IT%20LaunchPad%20workshop"
+                                        target="_blank" class="lecture-btn">
+                                        <i class="fas fa-calendar-check me-2"></i>Request Session
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="careers" class="section-padding bg-light-blue">
+        <div class="container">
+            <h2 class="section-title">Join Our Team</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center">
+                        <p class="lead mb-4" style="color: #a0a0a0;">At Nexora Tech, we believe talent knows no
+                            boundaries. If you're passionate about technology and eager to grow, we want you on our
+                            team. We offer dynamic internship programs where creativity meets real-world impact. Whether
+                            you're a coder, designer, problem-solver, or tech enthusiast, your journey starts here.
+                            Let's build the future—together.</p>
+                        <div class="mb-4">
+                            <h5 style="color: #00f5ff;">Current Openings</h5>
+                            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                                <span class="badge bg-primary">Fullstack Developer Intern</span>
+                                <span class="badge bg-primary">Software Developer Intern</span>
+                                <span class="badge bg-primary">Java Developer Intern</span>
+                                <span class="badge bg-primary">Python Developer Intern</span>
+                                <span class="badge bg-primary">Web Developer Intern</span>
+                                <span class="badge bg-primary">Mobile Developer Intern</span>
+                            </div>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf99PUXZGfY-547kx5Y3LZ8-85Ip6gjg-sFMg9JUre69dHVjA/viewform"
+                            target="_blank" class="btn careers-button">
+                            <i class="fas fa-paper-plane me-2"></i>Apply Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn cta-button w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info h-100">
+                        <h2 class="section-title">Get in Touch</h2>
+                        <br><br>
+                        <div class="mb-3">
+                            <i class="fas fa-envelope me-3"></i>
+                            <span>nexoratech.in18@gmail.com</span>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-phone me-3"></i>
+                            <span>+91 8805423326</span>
+                        </div>
+                        <div class="mb-4">
+                            <i class="fas fa-map-marker-alt me-3"></i>
+                            <span>Remote All Over India</span>
+                        </div>
+                        <div class="social-links mt-4">
+                            <a href="https://www.linkedin.com/company/nexora-tech-31/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/nexoratech_official18/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row text-white">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h5>Nexora Tech</h5>
+                    <p class="text-white-50">Empowering the Next Era of Digital Innovation</p>
+                    <p class="text-white-50">Building long-term partnerships rooted in innovation, integrity, and a
+                        shared vision of tomorrow's possibilities.</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <div class="d-flex flex-column flex-lg-row justify-content-lg-end gap-3">
+                        <a href="#home" class="text-white text-decoration-none">Home</a>
+                        <a href="#about" class="text-white text-decoration-none">About</a>
+                        <a href="#services" class="text-white text-decoration-none">Services</a>
+                        <a href="#projects" class="text-white text-decoration-none">Projects</a>
+                        <a href="#contact" class="text-white text-decoration-none">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 pt-4 border-top border-white-50">
+                <p class="text-white-50 mb-0">&copy; 2025 Nexora Tech. All rights reserved. | Designed with <i
+                        class="fas fa-heart text-danger"></i> by Nexora Tech</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                    }
+                }
+            });
+        });
+
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('show', window.pageYOffset > 300);
+
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '10px 0';
+            } else {
+                navbar.style.padding = '15px 0';
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const subject = formData.get('subject') || 'Contact Form Submission';
+            const name = formData.get('name') || this.querySelector('input[placeholder="Your Name"]').value;
+            const email = formData.get('email') || this.querySelector('input[placeholder="Your Email"]').value;
+            const message = formData.get('message') || this.querySelector('textarea').value;
+
+            const mailtoLink = `mailto:nexoratech.in18@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+            this.reset();
+            alert('Thank you for your message! Your email client will open shortly.');
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * window.innerWidth;
+                const duration = Math.random() * 15 + 10;
+                const delay = Math.random() * -20;
+
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}px`;
+                particle.style.bottom = `-${size}px`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .service-card, .project-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
