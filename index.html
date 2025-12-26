@@ -722,6 +722,7 @@
                 margin-bottom: 1rem;
             }
         }
+
         @media (max-width: 768px) {
             .navbar {
                 padding: 10px 0;
@@ -746,6 +747,7 @@
                 font-size: 1rem;
             }
         }
+
         @media (max-width: 576px) {
             .lecture-btn {
                 width: 100%;
@@ -765,6 +767,7 @@
                 font-size: 1rem;
             }
         }
+
         .navbar-toggler {
             border: 2px solid rgba(255, 255, 255, 0.7);
             padding: 6px 10px;
@@ -773,6 +776,7 @@
         .navbar-toggler:focus {
             box-shadow: none;
         }
+
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
@@ -780,12 +784,822 @@
         .navbar-toggler {
             box-shadow: 0 0 15px rgba(0, 245, 255, 0.6);
         }
+
         @media (max-width: 576px) {
             .hero-section p.fs-5 {
                 font-size: 0.9rem !important;
                 line-height: 1.6;
                 margin-bottom: 1.2rem;
                 padding: 0 8px;
+            }
+        }
+
+        /* Modern Lecture Section Styles */
+        .lecture-section {
+            background: linear-gradient(135deg, #0a0a1a 0%, #000510 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lecture-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .modern-lecture-card {
+            background: rgba(5, 5, 15, 0.85);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow:
+                0 20px 60px rgba(0, 245, 255, 0.2),
+                0 0 100px rgba(255, 0, 255, 0.1),
+                inset 0 0 40px rgba(0, 245, 255, 0.05);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .lecture-header {
+            position: relative;
+            padding: 2.5rem 2rem;
+            overflow: hidden;
+        }
+
+        .header-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    rgba(0, 245, 255, 0.1) 0%,
+                    rgba(255, 0, 255, 0.1) 50%,
+                    rgba(0, 245, 255, 0.1) 100%);
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .lecture-header h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+        }
+
+        .lecture-header .lead {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Modern Profile Card */
+        .modern-profile-card {
+            height: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 10, 25, 0.7);
+            border-right: 1px solid rgba(0, 245, 255, 0.2);
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow:
+                0 0 50px rgba(0, 245, 255, 0.4),
+                0 0 80px rgba(255, 0, 255, 0.3);
+            animation: floatImage 6s ease-in-out infinite;
+        }
+
+        @keyframes floatImage {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+        }
+
+        .modern-founder-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-image-container:hover .modern-founder-img {
+            transform: scale(1.05);
+        }
+
+        .profile-glow {
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #00f5ff, #ff00ff, #00f5ff);
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0.7;
+            filter: blur(10px);
+            animation: rotateGlow 8s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .profile-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(45deg, #ff00ff, #00f5ff);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+            animation: pulseBadge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseBadge {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .profile-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00f5ff;
+            margin-bottom: 0.25rem;
+        }
+
+        .profile-title {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .profile-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.25rem;
+        }
+
+        /* Amazing LinkedIn Button */
+        .amazing-linkedin-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #0077b5, #00a0dc, #0077b5);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow:
+                0 0 30px rgba(0, 119, 181, 0.4),
+                0 0 50px rgba(0, 160, 220, 0.2);
+            margin-top: 1rem;
+        }
+
+        .amazing-linkedin-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.3),
+                    transparent);
+            transition: left 0.7s ease;
+        }
+
+        .amazing-linkedin-btn:hover::before {
+            left: 100%;
+        }
+
+        .amazing-linkedin-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow:
+                0 0 40px rgba(0, 119, 181, 0.6),
+                0 0 70px rgba(0, 160, 220, 0.4),
+                0 0 100px rgba(0, 245, 255, 0.2);
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-icon {
+            font-size: 1.2rem;
+        }
+
+        .btn-hover-effect {
+            position: absolute;
+            right: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: #00f5ff;
+        }
+
+        .amazing-linkedin-btn:hover .btn-hover-effect {
+            right: 20px;
+            opacity: 1;
+        }
+
+        /* Lecture Content */
+        .lecture-content {
+            padding: 2rem;
+        }
+
+        .content-intro {
+            margin-bottom: 2rem;
+        }
+
+        .intro-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .learning-path {
+            margin-bottom: 2rem;
+        }
+
+        .path-title {
+            color: #00f5ff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .path-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 24px;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            border-radius: 3px;
+        }
+
+        .path-steps {
+            margin-top: 1rem;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: rgba(0, 245, 255, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            background: rgba(0, 245, 255, 0.1);
+            border-left-color: #00f5ff;
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            min-width: 45px;
+        }
+
+        .step-content h6 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .step-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        /* Expertise Section */
+        .expertise-section {
+            margin: 2rem 0;
+        }
+
+        .expertise-title {
+            color: #00f5ff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .expertise-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-tag:hover {
+            background: rgba(0, 245, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 245, 255, 0.2);
+        }
+
+        .expertise-tag i {
+            color: #00f5ff;
+            font-size: 0.9rem;
+        }
+
+        /* Fantastic Action Button */
+        .fantastic-action-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 18px 40px;
+            background: linear-gradient(135deg,
+                    #00f5ff 0%,
+                    #00d4ff 25%,
+                    #0099ff 50%,
+                    #ff00ff 75%,
+                    #00f5ff 100%);
+            background-size: 300% 300%;
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            overflow: hidden;
+            animation: gradientMove 4s ease infinite;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-top: 1rem;
+            box-shadow:
+                0 0 40px rgba(0, 245, 255, 0.6),
+                0 0 80px rgba(255, 0, 255, 0.4);
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .fantastic-action-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            animation: gradientMove 2s ease infinite;
+            box-shadow:
+                0 0 60px rgba(0, 245, 255, 0.8),
+                0 0 100px rgba(255, 0, 255, 0.6),
+                0 0 150px rgba(0, 149, 255, 0.4);
+        }
+
+        .btn-sparkle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .btn-sparkle:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .btn-sparkle:nth-child(2) {
+            top: 60%;
+            left: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .btn-sparkle:nth-child(3) {
+            top: 30%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .btn-sparkle:nth-child(4) {
+            top: 70%;
+            right: 15%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0.5) rotate(0deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        .btn-action-icon {
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-action-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-glow {
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            border-radius: inherit;
+            filter: blur(20px);
+            opacity: 0.7;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .fantastic-action-btn:hover .btn-glow {
+            opacity: 1;
+        }
+
+        .btn-note {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .modern-profile-card {
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+                padding-bottom: 2rem;
+            }
+
+            .profile-image-container {
+                width: 180px;
+                height: 180px;
+            }
+
+            .lecture-header h3 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-image-container {
+                width: 150px;
+                height: 150px;
+            }
+
+            .fantastic-action-btn {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+
+            .step-item {
+                padding: 10px;
+            }
+
+            .step-number {
+                font-size: 1.5rem;
+                min-width: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .lecture-header {
+                padding: 1.5rem 1rem;
+            }
+
+            .lecture-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .lecture-content {
+                padding: 1.5rem;
+            }
+
+            .profile-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .fantastic-action-btn {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 0.95rem;
+                text-align: center;
+            }
+        }
+
+        /* Modern Profile Layout Styles */
+        .profile-image-wrapper {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hexagon Layout */
+        .profile-image-wrapper.hexagon {
+            width: 300px;
+            height: 300px;
+        }
+
+        .hexagon-base {
+            position: relative;
+            width: 200px;
+            height: 230px;
+            margin: 35px auto;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            animation: hexagonRotate 20s linear infinite;
+        }
+
+        @keyframes hexagonRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hexagon-inner {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: calc(100% - 8px);
+            height: calc(100% - 8px);
+            background: #0a0a1a;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            overflow: hidden;
+        }
+
+        .hexagon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .hex-corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            z-index: 10;
+            animation: cornerPulse 3s ease-in-out infinite;
+        }
+
+        .hex-corner:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        .corner-1 {
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .corner-2 {
+            top: 15%;
+            right: -20px;
+        }
+
+        .corner-3 {
+            bottom: 15%;
+            right: -20px;
+        }
+
+        .corner-4 {
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .corner-5 {
+            bottom: 15%;
+            left: -20px;
+        }
+
+        .corner-6 {
+            top: 15%;
+            left: -20px;
+        }
+
+        @keyframes cornerPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .hex-element {
+            position: absolute;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(0, 245, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 245, 255, 0.4);
+            backdrop-filter: blur(5px);
+            z-index: 5;
+            animation: hexFloat 6s ease-in-out infinite;
+        }
+
+        .element-1 {
+            top: 40%;
+            left: -40px;
+            animation-delay: 0s;
+        }
+
+        .element-2 {
+            top: 10px;
+            right: -50px;
+            animation-delay: 1s;
+        }
+
+        .element-3 {
+            bottom: 40%;
+            right: -40px;
+            animation-delay: 2s;
+        }
+
+        @keyframes hexFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
             }
         }
     </style>
@@ -927,8 +1741,7 @@
             <h2 class="section-title">Our Projects</h2>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
-                    <div class="project-card"
-                        onclick="window.open('http://localhost/tailor-management/login.php', '_blank')">
+                    <div class="project-card" onclick="window.open('newposhtailor.wuaze.com', '_blank')">
                         <div class="project-image"><i class="fas fa-cut"></i></div>
                         <div class="project-content">
                             <h3 class="project-title">New Posh Tailor Management</h3>
@@ -973,59 +1786,200 @@
 
     <section id="lecture" class="section-padding lecture-section">
         <div class="container">
-            <h2 class="section-title">IT LaunchPad - Industry Orientation Program for Students</h2>
+            <h2 class="section-title">IT LaunchPad - College To Corporate</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="lecture-card">
-                        <div class="row align-items-center">
-                            <div class="col-md-4 text-center mb-4 mb-md-0">
-                                <img src="linkedinp.jpg" alt="Rushikesh Narawade" class="founder-img border-white">
-                                <h4 class="mt-3 text-white">Rushikesh Narawade</h4>
-                                <p class="text-white-50 mb-1">Founder & CEO – Nexora Tech</p>
-                                <p class="text-muted mb-3">Industry Mentor | IT Professional</p>
-                                <a href="https://www.linkedin.com/in/rushikesh-narawade-65a095236/" target="_blank"
-                                    class="btn btn-primary">
-                                    <i class="fab fa-linkedin me-2"></i>Connect on LinkedIn
-                                </a>
+                <div class="col-lg-12">
+                    <div class="modern-lecture-card">
+                        <div class="row align-items-stretch">
+                            <!-- Modern Profile Section -->
+                            <div class="col-lg-4 col-md-5">
+                                <div class="modern-profile-card">
+                                    <div class="profile-image-wrapper">
+                                        <div class="profile-image-container">
+                                            <img src="linkedinp.jpg" alt="Rushikesh Narawade"
+                                                class="modern-founder-img">
+                                            <div class="profile-glow"></div>
+                                            <div class="profile-badge">
+                                                <i class="fas fa-star"></i>
+                                            </div>
 
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="mb-4">One-Day Intensive Workshop for Students</h3>
-                                <p class="mb-3">
-                                    <strong>IT LaunchPad</strong> is a structured, one-day industry orientation
-                                    program designed for college students who aspire to build a successful
-                                    career in the IT sector. The session focuses on bridging the gap between
-                                    academic knowledge and real-world industry expectations.
-                                </p>
-                                <h5 class="mb-3">What You'll Learn:</h5>
-                                <ul class="mb-4">
-                                    <li>✓ Understanding the IT industry structure and fresher expectations</li>
-                                    <li>✓ How students can enter the IT industry step-by-step</li>
-                                    <li>✓ Selecting the right programming language or technology path</li>
-                                    <li>✓ Building a strong LinkedIn profile and professional network</li>
-                                    <li>✓ Effective job search strategies and application methods</li>
-                                    <li>✓ Resume structuring techniques for students and freshers</li>
-                                    <li>✓ Interview preparation strategies and common interview patterns</li>
-                                    <li>✓ Awareness of AI, ML, and emerging technology trends</li>
-                                    <li>✓ Practical guidance through mock interview discussions</li>
-                                </ul>
+                                        </div>
+                                    </div>
+                                    <div class="profile-content">
+                                        <h4 class="profile-name">Rushikesh Narawade</h4>
+                                        <p class="profile-title">Founder & CEO – Nexora Tech</p>
+                                        <p class="profile-subtitle">Industry Mentor | IT Professional</p>
 
-                                <div class="mt-4">
-                                    <h5 class="mb-3">Core Expertise:</h5>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge bg-primary">Websites Development</span>
-                                        <span class="badge bg-primary">App Development</span>
-                                        <span class="badge bg-primary">Interviews Preparation</span>
-                                        <span class="badge bg-primary">Tech Trainer</span>
+                                        <div class="profile-stats">
+                                            <div class="stat-item">
+                                                <span class="stat-number">5000+</span>
+                                                <span class="stat-label">LinkedIn followers</span>
+                                            </div>
+                                            <div class="stat-item">
+                                                <span class="stat-number">2+</span>
+                                                <span class="stat-label">Years Experience</span>
+                                            </div>
+                                        </div>
+                                        <a href="https://www.linkedin.com/in/rushikesh-narawade-65a095236/"
+                                            target="_blank" class="btn amazing-linkedin-btn">
+                                            <div class="btn-content">
+                                                <i class="fab fa-linkedin btn-icon"></i>
+                                                <span class="btn-text">Connect on LinkedIn</span>
+                                            </div>
+                                            <div class="btn-hover-effect">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="text-center mt-4">
-                                    <a href="https://wa.me/918805423326?text=Hi%2C%20I%20am%20interested%20in%20IT%20LaunchPad%20workshop"
-                                        target="_blank" class="lecture-btn">
-                                        <i class="fas fa-calendar-check me-2"></i>Request Session
-                                    </a>
-                                </div>
+                            </div>
 
+                            <!-- Content Section -->
+                            <div class="col-lg-8 col-md-7">
+                                <div class="lecture-content">
+                                    <div class="content-intro">
+                                        <p class="intro-text">
+                                            <strong>IT LaunchPad</strong> is a comprehensive 12-step program that
+                                            bridges the gap between college education and corporate IT careers. We
+                                            provide hands-on guidance, real-world insights, and practical strategies to
+                                            launch your career.
+                                        </p>
+                                    </div>
+
+                                    <div class="learning-path">
+                                        <h5 class="path-title">Your 12-Step Career Transformation</h5>
+                                        <div class="path-steps">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="step-item">
+                                                        <span class="step-number">01</span>
+                                                        <div class="step-content">
+                                                            <h6>Industry Foundation</h6>
+                                                            <p>Understanding how the IT industry works</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">02</span>
+                                                        <div class="step-content">
+                                                            <h6>Career Exploration</h6>
+                                                            <p>Exploring IT roles & career paths</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">03</span>
+                                                        <div class="step-content">
+                                                            <h6>Tech Stack Selection</h6>
+                                                            <p>Choosing the right programming language</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">04</span>
+                                                        <div class="step-content">
+                                                            <h6>Learning Strategy</h6>
+                                                            <p>How to learn programming the right way</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">05</span>
+                                                        <div class="step-content">
+                                                            <h6>Project Building</h6>
+                                                            <p>Building real-world projects</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">06</span>
+                                                        <div class="step-content">
+                                                            <h6>Resume Mastery</h6>
+                                                            <p>Structuring resumes for freshers</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="step-item">
+                                                        <span class="step-number">07</span>
+                                                        <div class="step-content">
+                                                            <h6>LinkedIn Optimization</h6>
+                                                            <p>Building strong profile & network</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">08</span>
+                                                        <div class="step-content">
+                                                            <h6>Job Search Strategy</h6>
+                                                            <p>Smart application strategies</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">09</span>
+                                                        <div class="step-content">
+                                                            <h6>Interview Preparation</h6>
+                                                            <p>Common patterns & techniques</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">10</span>
+                                                        <div class="step-content">
+                                                            <h6>Mock Interviews</h6>
+                                                            <p>Real-world scenarios practice</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">11</span>
+                                                        <div class="step-content">
+                                                            <h6>Long-Term Growth</h6>
+                                                            <p>Consistency & discipline strategies</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <span class="step-number">12</span>
+                                                        <div class="step-content">
+                                                            <h6>Program Wrap-Up</h6>
+                                                            <p>Q&A & personalized guidance</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="expertise-section">
+                                        <h5 class="expertise-title">Core Expertise Areas</h5>
+                                        <div class="expertise-tags">
+                                            <span class="expertise-tag">
+                                                <i class="fas fa-code"></i>
+                                                Websites Development
+                                            </span>
+                                            <span class="expertise-tag">
+                                                <i class="fas fa-mobile-alt"></i>
+                                                App Development
+                                            </span>
+                                            <span class="expertise-tag">
+                                                <i class="fas fa-comments"></i>
+                                                Interviews Preparation
+                                            </span>
+                                            <span class="expertise-tag">
+                                                <i class="fas fa-chalkboard-teacher"></i>
+                                                Tech Trainer
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Fantastic Button -->
+                                    <div class="action-section text-center">
+                                        <a href="https://wa.me/918805423326?text=Hello%20Rushikesh%2C%20I'm%20interested%20in%20your%20IT%20LaunchPad%20program%20%E2%9C%A8%0A%0AI%20would%20like%20to%20know%20more%20about%20the%20College%20to%20Corporate%20transformation%20workshop%20and%20how%20I%20can%20get%20started%21%0A%0ALooking%20forward%20to%20your%20guidance✨"
+                                            target="_blank" class="btn fantastic-action-btn">
+                                            <div class="btn-sparkle"></div>
+                                            <div class="btn-sparkle"></div>
+                                            <div class="btn-sparkle"></div>
+                                            <div class="btn-sparkle"></div>
+                                            <i class="fas fa-calendar-check btn-action-icon"></i>
+                                            <span class="btn-action-text">Book Your Career Transformation Session</span>
+                                            <div class="btn-glow"></div>
+                                        </a>
+                                        <p class="btn-note mt-2">Limited spots available • One-on-one mentorship
+                                            included</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1033,7 +1987,6 @@
             </div>
         </div>
     </section>
-
     <section id="careers" class="section-padding bg-light-blue">
         <div class="container">
             <h2 class="section-title">Join Our Team</h2>
