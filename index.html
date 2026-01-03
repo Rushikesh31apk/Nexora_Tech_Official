@@ -2056,17 +2056,7 @@
             transition: left 0.6s ease;
         }
 
-        .gov-verified-section .feature-item:hover::before {
-            left: 100%;
-        }
-
-        .gov-verified-section .feature-item:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 245, 255, 0.5);
-            box-shadow:
-                0 20px 60px rgba(0, 245, 255, 0.3),
-                0 0 80px rgba(255, 165, 0, 0.2);
-        }
+        
 
         .gov-verified-section .feature-icon {
             font-size: 3rem;
@@ -2079,9 +2069,6 @@
             transition: transform 0.3s ease;
         }
 
-        .gov-verified-section .feature-item:hover .feature-icon {
-            transform: scale(1.2) rotate(10deg);
-        }
 
         .gov-verified-section .feature-title {
             color: #00f5ff;
@@ -2169,6 +2156,7 @@
             gap: 40px;
             flex-wrap: wrap;
             margin-top: 60px;
+            color: #e3f709;
         }
 
         .trust-badge {
@@ -2288,10 +2276,7 @@
             transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .certificate-card:hover .certificate-inner {
-            transform: rotateY(10deg) rotateX(-5deg) scale(1.05);
-        }
-
+        
         .certificate-front {
             position: absolute;
             width: 100%;
@@ -2337,10 +2322,7 @@
             transition: transform 0.5s ease;
         }
 
-        .certificate-card:hover .certificate-image {
-            transform: scale(1.02);
-        }
-
+       
         /* Scanning Animation - Adjusted for new height */
         .scanner-line {
             position: absolute;
@@ -2893,7 +2875,7 @@
                         <div class="certificate-front">
                             <div class="scanner-line"></div>
                             <div class="verification-checkmark">
-                                <i class="fas fa-check"></i>
+                                <i class="fas fa-award"></i>
                             </div>
                             <div class="scan-complete-badge">
                                 <i class="fas fa-shield-check"></i>
@@ -2913,7 +2895,7 @@
                 <h3 class="registration-number">UDYAM-MH-01-0274276</h3>
             </div>
 
-            <!-- Trust Badges -->
+            <!-- Trust Badges
             <div class="trust-badges">
                 <div class="trust-badge">
                     <i class="fas fa-award"></i>
@@ -2921,13 +2903,13 @@
                 </div>
                 <div class="trust-badge">
                     <i class="fas fa-landmark"></i>
-                    <span class="trust-badge-text">Government Approved</span>
+                    <span class="trust-badge-text">Government <br> Approved</span>
                 </div>
                 <div class="trust-badge">
                     <i class="fas fa-shield-alt"></i>
                     <span class="trust-badge-text">100% Verified</span>
                 </div>
-            </div>
+            </div>  -->
         </div>
     </section>
 
