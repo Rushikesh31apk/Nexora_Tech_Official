@@ -1602,6 +1602,882 @@
                 transform: translateY(-10px) rotate(5deg);
             }
         }
+
+        /* ========== GOVERNMENT VERIFIED SECTION STYLES ========== */
+        .gov-verified-section {
+            padding: 100px 0;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gov-verified-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(0, 245, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 165, 0, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            animation: bgPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Section Header for Gov Verified */
+        .gov-verified-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .gov-verified-section .verification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 165, 0, 0.1));
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 50px;
+            margin-bottom: 20px;
+            animation: badgeGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes badgeGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+                border-color: rgba(0, 245, 255, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(0, 245, 255, 0.6);
+                border-color: rgba(0, 245, 255, 0.6);
+            }
+        }
+
+        .gov-verified-section .verification-badge i {
+            color: #FFD700;
+            font-size: 1.2rem;
+            animation: shieldPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes shieldPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .gov-verified-section .verification-badge span {
+            color: #00f5ff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .gov-verified-section .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00f5ff, #FFA500, #00f5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 0 60px rgba(0, 245, 255, 0.3);
+            animation: titleShine 4s ease-in-out infinite;
+        }
+
+        @keyframes titleShine {
+
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+
+        .gov-verified-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Certificate Showcase */
+        .certificate-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+
+        /* 3D Certificate Card */
+        .certificate-card {
+            position: relative;
+            width: 600px;
+            height: 450px;
+            perspective: 1500px;
+            animation: floatCertificate 6s ease-in-out infinite;
+        }
+
+        @keyframes floatCertificate {
+
+            0%,
+            100% {
+                transform: translateY(0) rotateY(0deg);
+            }
+
+            25% {
+                transform: translateY(-15px) rotateY(5deg);
+            }
+
+            50% {
+                transform: translateY(0) rotateY(0deg);
+            }
+
+            75% {
+                transform: translateY(-15px) rotateY(-5deg);
+            }
+        }
+
+        .certificate-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .certificate-card:hover .certificate-inner {
+            transform: rotateY(10deg) rotateX(-5deg) scale(1.05);
+        }
+
+        .certificate-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(10, 10, 25, 0.8);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            box-shadow:
+                0 30px 80px rgba(0, 245, 255, 0.3),
+                0 0 100px rgba(255, 165, 0, 0.2),
+                inset 0 0 60px rgba(0, 245, 255, 0.1);
+        }
+
+        .certificate-front::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(45deg, #00f5ff, #FFA500, #FFD700, #00f5ff);
+            border-radius: 20px;
+            z-index: -1;
+            animation: borderRotate 4s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .certificate-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .certificate-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 15px;
+            filter: drop-shadow(0 10px 30px rgba(0, 245, 255, 0.4));
+            transition: transform 0.5s ease;
+        }
+
+        .certificate-card:hover .certificate-image {
+            transform: scale(1.03);
+        }
+
+        /* Scanning Animation */
+        .scanner-line {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(0, 245, 255, 0.3) 20%,
+                    rgba(0, 245, 255, 0.8) 50%,
+                    rgba(0, 245, 255, 0.3) 80%,
+                    transparent 100%);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
+            top: 0;
+            left: 0;
+            animation: scan 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        @keyframes scan {
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* Verification Checkmark Animation */
+        .verification-checkmark {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00ff7f, #00f5ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            animation: checkmarkPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 30px rgba(0, 255, 127, 0.6);
+        }
+
+        @keyframes checkmarkPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(0, 255, 127, 0.6);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 50px rgba(0, 255, 127, 0.8);
+            }
+        }
+
+        .verification-checkmark i {
+            color: #000;
+            font-size: 1.8rem;
+            animation: checkmarkRotate 2s ease-in-out infinite;
+        }
+
+        @keyframes checkmarkRotate {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-10deg);
+            }
+
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+
+        /* Scan Complete Badge */
+        .scan-complete-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 255, 127, 0.2);
+            border: 2px solid #00ff7f;
+            border-radius: 50px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 10;
+            animation: badgeFadeIn 3s ease-in-out infinite;
+        }
+
+        @keyframes badgeFadeIn {
+
+            0%,
+            30% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(10px);
+            }
+
+            40%,
+            90% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        .scan-complete-badge i {
+            color: #00ff7f;
+            font-size: 0.9rem;
+        }
+
+        .scan-complete-badge span {
+            color: #00ff7f;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Glow Effects */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.6;
+            animation: orbFloat 8s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 245, 255, 0.4), transparent);
+            top: -50px;
+            left: -50px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.4), transparent);
+            bottom: -30px;
+            right: -30px;
+            animation-delay: 2s;
+        }
+
+        .orb-3 {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent);
+            top: 50%;
+            right: -60px;
+            animation-delay: 4s;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(20px, -20px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
+
+        /* Verification Features */
+        .verification-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 80px;
+        }
+
+        .gov-verified-section .feature-item {
+            background: rgba(10, 10, 25, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gov-verified-section .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .gov-verified-section .feature-item:hover::before {
+            left: 100%;
+        }
+
+        .gov-verified-section .feature-item:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 245, 255, 0.5);
+            box-shadow:
+                0 20px 60px rgba(0, 245, 255, 0.3),
+                0 0 80px rgba(255, 165, 0, 0.2);
+        }
+
+        .gov-verified-section .feature-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #00f5ff, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .gov-verified-section .feature-item:hover .feature-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .gov-verified-section .feature-title {
+            color: #00f5ff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .gov-verified-section .feature-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Registration Number Display */
+        .registration-display {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(10, 10, 25, 0.7);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .registration-display::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 165, 0, 0.05));
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .registration-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .registration-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFD700, #FFA500, #00f5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+            position: relative;
+            z-index: 2;
+            animation: numberGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes numberGlow {
+
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+
+            50% {
+                filter: brightness(1.5);
+            }
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 25px 35px;
+            background: rgba(10, 10, 25, 0.6);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .trust-badge:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 165, 0, 0.6);
+            box-shadow: 0 10px 40px rgba(255, 165, 0, 0.3);
+        }
+
+        .trust-badge i {
+            font-size: 2.5rem;
+            color: #FFD700;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+        }
+
+        .trust-badge-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* ========== RESPONSIVE DESIGN FOR GOVERNMENT SECTION ========== */
+        @media (max-width: 768px) {
+            .gov-verified-section .section-title {
+                font-size: 2rem;
+            }
+
+            .certificate-card {
+                width: 100%;
+                max-width: 450px;
+                height: 350px;
+            }
+
+            .registration-number {
+                font-size: 1.8rem;
+            }
+
+            .verification-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gov-verified-section .section-title {
+                font-size: 1.5rem;
+            }
+
+            .certificate-card {
+                height: 300px;
+            }
+
+            .registration-number {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            .trust-badges {
+                gap: 20px;
+            }
+
+            .trust-badge {
+                padding: 15px 25px;
+            }
+        }
+
+        /* Certificate Showcase */
+        .certificate-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+
+        /* Optimized Certificate Card for 1235×342 aspect ratio */
+        .certificate-card {
+            position: relative;
+            width: 900px;
+            /* Reduced from 1235 to fit better */
+            height: 280px;
+            /* Maintains aspect ratio (342/1235 × 900) */
+            perspective: 1500px;
+            animation: floatCertificate 6s ease-in-out infinite;
+            margin: 0 auto;
+        }
+
+        /* Alternative: Responsive approach */
+        .certificate-card {
+            position: relative;
+            width: 90vw;
+            max-width: 1000px;
+            height: calc(90vw * 0.277);
+            /* 342/1235 = 0.277 aspect ratio */
+            max-height: 300px;
+            perspective: 1500px;
+            animation: floatCertificate 6s ease-in-out infinite;
+            margin: 0 auto;
+        }
+
+        .certificate-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .certificate-card:hover .certificate-inner {
+            transform: rotateY(10deg) rotateX(-5deg) scale(1.05);
+        }
+
+        .certificate-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(10, 10, 25, 0.8);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            box-shadow:
+                0 20px 50px rgba(0, 245, 255, 0.3),
+                0 0 80px rgba(255, 165, 0, 0.2),
+                inset 0 0 40px rgba(0, 245, 255, 0.1);
+        }
+
+        .certificate-front::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(45deg, #00f5ff, #FFA500, #FFD700, #00f5ff);
+            border-radius: 15px;
+            z-index: -1;
+            animation: borderRotate 4s linear infinite;
+        }
+
+        .certificate-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            filter: drop-shadow(0 5px 20px rgba(0, 245, 255, 0.4));
+            transition: transform 0.5s ease;
+        }
+
+        .certificate-card:hover .certificate-image {
+            transform: scale(1.02);
+        }
+
+        /* Scanning Animation - Adjusted for new height */
+        .scanner-line {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(0, 245, 255, 0.3) 20%,
+                    rgba(0, 245, 255, 0.8) 50%,
+                    rgba(0, 245, 255, 0.3) 80%,
+                    transparent 100%);
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.8);
+            top: 0;
+            left: 0;
+            animation: scan 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        /* Position verification elements */
+        .verification-checkmark {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #00ff7f, #00f5ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            animation: checkmarkPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(0, 255, 127, 0.6);
+        }
+
+        .verification-checkmark i {
+            color: #000;
+            font-size: 1.2rem;
+            animation: checkmarkRotate 2s ease-in-out infinite;
+        }
+
+        /* Scan Complete Badge - Position adjusted */
+        .scan-complete-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 255, 127, 0.2);
+            border: 2px solid #00ff7f;
+            border-radius: 50px;
+            padding: 6px 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 10;
+            animation: badgeFadeIn 3s ease-in-out infinite;
+        }
+
+        .scan-complete-badge i {
+            color: #00ff7f;
+            font-size: 0.8rem;
+        }
+
+        .scan-complete-badge span {
+            color: #00ff7f;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Simplified animation for the card */
+        @keyframes floatCertificate {
+
+            0%,
+            100% {
+                transform: translateY(0) rotateY(0deg);
+            }
+
+            33% {
+                transform: translateY(-8px) rotateY(3deg);
+            }
+
+            66% {
+                transform: translateY(-8px) rotateY(-3deg);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .certificate-card {
+                width: 95vw;
+                height: calc(95vw * 0.277);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .certificate-card {
+                width: 95vw;
+                height: calc(95vw * 0.277);
+                max-height: 250px;
+            }
+
+            .certificate-front {
+                border-radius: 10px;
+            }
+
+            .verification-checkmark {
+                width: 30px;
+                height: 30px;
+                top: 8px;
+                right: 8px;
+            }
+
+            .verification-checkmark i {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .certificate-card {
+                width: 100%;
+                height: calc(100vw * 0.277);
+                max-height: 200px;
+            }
+
+            .certificate-image-container {
+                padding: 8px;
+            }
+
+            .registration-number {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            .gov-verified-section .section-title {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 
@@ -1616,6 +2492,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gov-verified">Gov Verified</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#lecture">Career Guidance</a></li>
@@ -1695,6 +2572,7 @@
             </div>
         </div>
     </section>
+    
 
     <section id="services" class="section-padding">
         <div class="container">
@@ -1987,6 +2865,71 @@
             </div>
         </div>
     </section>
+    <!-- Government Verified Section -->
+    <section id="gov-verified" class="section-padding gov-verified-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="verification-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>OFFICIALLY VERIFIED</span>
+                </div>
+                <h2 class="section-title">Government Verified Enterprise</h2>
+                <p class="section-subtitle">
+                    Certified by the Ministry of MSME, Government of India.
+                    Your trusted partner in digital transformation.
+                </p>
+            </div>
+
+            <!-- Certificate Showcase -->
+            <div class="certificate-showcase">
+                <div class="certificate-card">
+                    <div class="glow-orb orb-1"></div>
+                    <div class="glow-orb orb-2"></div>
+                    <div class="glow-orb orb-3"></div>
+
+                    <div class="certificate-inner">
+                        <div class="certificate-front">
+                            <div class="scanner-line"></div>
+                            <div class="verification-checkmark">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="scan-complete-badge">
+                                <i class="fas fa-shield-check"></i>
+                                <span>VERIFIED</span>
+                            </div>
+                            <div class="certificate-image-container">
+                                <img src="add.png" alt="UDYAM Registration Certificate" class="certificate-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Number -->
+            <div class="registration-display">
+                <p class="registration-label">Official UDYAM Registration Number</p>
+                <h3 class="registration-number">UDYAM-MH-01-0274276</h3>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-award"></i>
+                    <span class="trust-badge-text">MSME Certified</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-landmark"></i>
+                    <span class="trust-badge-text">Government Approved</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="trust-badge-text">100% Verified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="careers" class="section-padding bg-light-blue">
         <div class="container">
             <h2 class="section-title">Join Our Team</h2>
